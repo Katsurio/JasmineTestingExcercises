@@ -14,15 +14,15 @@
       <form id="calc-form">
         <label>
           Loan Amount
-          <input type="text" id="loan-amount">
+          <input type="text" id="loan-amount" value="20000" type="number">
         </label>
         <label>
           Term in Years
-          <input type="text" id="loan-years">
+          <input type="text" id="loan-years" value="10" type="number" >
         </label>
         <label>
           Yearly Rate
-          <input type="text" id="loan-rate">
+          <input type="text" id="loan-rate" type="number" min="1" max="100" value="16">
         </label>
         <button type="submit" id="calc-submit">Calculate</button>
       </form>
