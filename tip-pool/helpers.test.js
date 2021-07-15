@@ -12,7 +12,7 @@ describe("Helpers test (with setup and take down)", () => {
                 tipAmt: 20,
                 tipPercent: 10
             }
-        }
+        }        
     })
 
     it('should give the sums of bill, tips, and tip percentage amounts on sumPaymentTotal()', () => {
@@ -44,8 +44,20 @@ describe("Helpers test (with setup and take down)", () => {
         expect(paymentTbody.querySelectorAll('td').length).toEqual(3);
     })
 
+    it('should append delete btn td to tr and delete on click event', () => {
+        let newTr = document.createElement('tr');
+        serverTbody.append(newTr);
+
+        appendDeleteBtn(newTr);
+
+        expect(serverTbody.querySelectorAll('tr').length).toEqual(1);
+        expect(serverTbody.querySelectorAll('td').length).toEqual(1);
+        expect(serverTbody.querySelectorAll('td')[0].innerText).toEqual("X");
+    })
+
     afterEach(() => {
         allPayments = {};
         paymentTbody.innerHTML = '';
+        serverTbody.innerHTML = '';
     })
 })
