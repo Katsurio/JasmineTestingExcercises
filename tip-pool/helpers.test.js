@@ -44,7 +44,18 @@ describe("Helpers test (with setup and take down)", () => {
         expect(paymentTbody.querySelectorAll('td').length).toEqual(3);
     })
 
-    it('should append delete btn td to tr and delete on click event', () => {
+    it('should a append server delete btn td to tr and delete on click event', () => {
+        let newTr = document.createElement('tr');
+        serverTbody.append(newTr);
+
+        appendServerDeleteBtn(newTr);
+
+        expect(serverTbody.querySelectorAll('tr').length).toEqual(1);
+        expect(serverTbody.querySelectorAll('td').length).toEqual(1);
+        expect(serverTbody.querySelectorAll('td')[0].innerText).toEqual("X");
+    })
+
+    it('should append a payment delete td to tr, delete on click, and reset shift summary', () => {
         let newTr = document.createElement('tr');
         serverTbody.append(newTr);
 

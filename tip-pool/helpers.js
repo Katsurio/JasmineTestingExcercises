@@ -49,6 +49,8 @@ function appendPaymentDeleteBtn(tr) {
     summaryTds[0].innerHTML = '';
     summaryTds[1].innerHTML = '';
     summaryTds[2].innerHTML = '';
+
+    if(Object.keys(allPayments).length) { updateSummary()};
   })
 
   tr.append(newTd);
