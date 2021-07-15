@@ -44,7 +44,7 @@ describe("Servers test (with setup and tear-down)", () => {
     updateServerTable();
 
     expect(serverTbody.querySelectorAll('tr').length).toEqual(1);
-    expect(serverTbody.querySelectorAll('td').length).toEqual(2);
+    expect(serverTbody.querySelectorAll('td').length).toEqual(3);
   })
 
   afterEach(function() {
