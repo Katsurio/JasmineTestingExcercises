@@ -44,7 +44,7 @@ describe("Helpers test (with setup and take down)", () => {
         expect(paymentTbody.querySelectorAll('td').length).toEqual(3);
     })
 
-    it('should a append server delete btn td to tr and delete on click event', () => {
+    it('should append a server delete btn td to tr and delete on click event', () => {
         let newTr = document.createElement('tr');
         serverTbody.append(newTr);
 
@@ -55,15 +55,15 @@ describe("Helpers test (with setup and take down)", () => {
         expect(serverTbody.querySelectorAll('td')[0].innerText).toEqual("X");
     })
 
-    it('should append a payment delete td to tr, delete on click, and reset shift summary', () => {
+    it('should append a payment delete btn to tr, delete on click, and reset shift summary', () => {
         let newTr = document.createElement('tr');
-        serverTbody.append(newTr);
+        paymentTbody.append(newTr);
 
-        appendServerDeleteBtn(newTr);
+        appendPaymentDeleteBtn(newTr);
 
-        expect(serverTbody.querySelectorAll('tr').length).toEqual(1);
-        expect(serverTbody.querySelectorAll('td').length).toEqual(1);
-        expect(serverTbody.querySelectorAll('td')[0].innerText).toEqual("X");
+        expect(paymentTbody.querySelectorAll('tr').length).toEqual(1);
+        expect(paymentTbody.querySelectorAll('td').length).toEqual(1);
+        expect(paymentTbody.querySelectorAll('td')[0].innerText).toEqual("X");
     })
 
     afterEach(() => {
