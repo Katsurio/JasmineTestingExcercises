@@ -64,5 +64,7 @@ describe("Payments test (with setup and take down)", () => {
         summaryTds[0].innerHTML = '';
         summaryTds[1].innerHTML = '';
         summaryTds[2].innerHTML = '';
+        billAmtInput.value = '';
+        tipAmtInput.value = '';
     })
 })

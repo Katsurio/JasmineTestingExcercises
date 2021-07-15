@@ -25,7 +25,7 @@ function appendTd(tr, value) {
 }
 
 // expects a table row element, appends a newly created delete btn
-function appendDeleteBtn(tr) {
+function appendServerDeleteBtn(tr) {
   let newTd = document.createElement('td');
   newTd.innerText = 'X';
   newTd.addEventListener('click', (evt) => {
@@ -37,3 +37,20 @@ function appendDeleteBtn(tr) {
 
   tr.append(newTd);
 }
+
+function appendPaymentDeleteBtn(tr) {
+  let newTd = document.createElement('td');
+  newTd.innerText = 'X';
+  newTd.addEventListener('click', (evt) => {
+    let targetParent = evt.target.parentElement;
+
+    targetParent.remove(); // remove parent tr
+    delete allPayments[targetParent.id]; // delete server from allPayments obj. with parent's ID
+    summaryTds[0].innerHTML = '';
+    summaryTds[1].innerHTML = '';
+    summaryTds[2].innerHTML = '';
+  })
+
+  tr.append(newTd);
+}
+

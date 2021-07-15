@@ -48,7 +48,7 @@ describe("Helpers test (with setup and take down)", () => {
         let newTr = document.createElement('tr');
         serverTbody.append(newTr);
 
-        appendDeleteBtn(newTr);
+        appendServerDeleteBtn(newTr);
 
         expect(serverTbody.querySelectorAll('tr').length).toEqual(1);
         expect(serverTbody.querySelectorAll('td').length).toEqual(1);
