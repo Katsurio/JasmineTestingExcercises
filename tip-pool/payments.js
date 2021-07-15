@@ -20,11 +20,11 @@ function submitPaymentInfo(evt) {
     paymentId += 1;
 
     allPayments['payment' + paymentId] = curPayment;
-
+    
     appendPaymentTable(curPayment);
     updateServerTable();
     updateSummary();
-
+    console.log('before: ' + allPayments);
     billAmtInput.value = '';
     tipAmtInput.value = '';
   }
